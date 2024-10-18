@@ -1,0 +1,8 @@
+.primaryBtn{
+    font-weight: 600;
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+    width: max-content;
+    padding: 10px 12px;
+}

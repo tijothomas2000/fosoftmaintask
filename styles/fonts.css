@@ -1,0 +1,16 @@
+.headingFont{
+    font-size: 34px;
+    font-weight: 700;
+}
+.subheadingFont{
+    font-size: 24px;
+    font-weight: 500;
+}
+.textFont{
+    font-size: 16px;
+    font-weight: 300;
+}
+.linkFont{
+    font-size: 20px;
+    font-weight: 400;
+}
