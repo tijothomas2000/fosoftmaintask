@@ -1,3 +1,53 @@
-.footer{
-    width: 100%;
+.footer {
+  width: 100%;
+  height: max-content;
+  background-color: black;
+  .footerContainer {
+    margin: 0 auto;
+    padding: 30px 60px;
+    height: 100%;
+    .footerContent {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    //   justify-content: center;
+      gap: 30px;
+      .branding {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 36px;
+        text-align: center;
+        font-weight: 700;
+        color: white;
+        .innertext {
+          width: 7px;
+          height: 7px;
+          background-color: white;
+        }
+      }
+      .footerSub {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 7px;
+        .footerSubHeading {
+          // font-family: 'Urbanist';
+          font-size: 15px;
+          width: max-content;
+          color: white;
+          font-weight: 400;
+          border-bottom: 1px solid white;
+          margin-bottom: 10px;
+        }
+        .footerText {
+          font-size: 13px;
+          color: grey;
+        }
+      }
+    }
+  }
 }

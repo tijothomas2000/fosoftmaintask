@@ -1,3 +1,123 @@
-.navbar{
-    width: 100%;
+@import "../../../styles/responsive.scss";
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  .navContainer {
+    margin: 0 auto;
+    padding: 10px 60px;
+    height: 100%;
+    .navbarContent {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .branding {
+        flex: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 36px;
+        text-align: center;
+        font-weight: 700;
+        color: white;
+        .innertext {
+          width: 7px;
+          height: 7px;
+          background-color: white;
+        }
+      }
+      .navLinks {
+        flex: auto;
+        .navLinksContainer {
+          display: flex;
+          gap: 30px;
+        }
+      }
+      .navBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+      .menuIcons {
+        display: none;
+        position: relative;
+        .dragHandle {
+          color: white;
+          position: absolute;
+        }
+        .closeIcon {
+          color: white;
+          position: absolute;
+        }
+      }
+      .navmenu {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: black;
+        overflow-x: hidden;
+        .menuLinksContainer {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          .menuBtnContainer{
+            padding: 20px 60px;
+            .menuBtn {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              color: white;
+              font-size: 20px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.navLinkFont {
+  padding: 3px 0;
+  list-style: none;
+  color: white;
+  &:hover {
+    border-bottom: 1px solid white;
+    cursor: pointer;
+  }
+}
+.menuLinkFont {
+  padding: 30px 60px;
+  color: white;
+  list-style: none;
+  &:hover {
+    background-color: blue;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navLinks {
+    display: none;
+  }
+  .navBtn {
+    display: none !important;
+  }
+  .menuIcons {
+    display: flex !important;
+    align-items: center;
+  }
 }
