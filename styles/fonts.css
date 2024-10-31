@@ -1,13 +1,14 @@
 .headingFont{
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 .subheadingFont{
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 500;
 }
 .textFont{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
 }
 .linkFont{
