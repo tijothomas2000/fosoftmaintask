@@ -3,6 +3,11 @@
   width: 100%;
   height: 100%;
   margin: 30px auto;
+  .container{
+    @include sm{
+      padding: 0 25px;
+    }
+  }
   .letstalkContainer {
     background-color: rgba(128, 128, 128, 0.336);
     width: 100%;
@@ -89,11 +94,13 @@
         .nameFields {
           width: 100%;
           display: flex;
-          // justify-content: space-between;
           gap: 15px;
 
           @include lg {
             width: 100%;
+          }
+          @include sm{
+            flex-direction: column;
           }
           .nameContent {
             width: 100%;
