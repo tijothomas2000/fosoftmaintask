@@ -10,6 +10,10 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [divisions, setDivisions] = useState(false);
+
+
+
     return (
         <nav className='navbar'>
             <div className="navContainer">
@@ -17,9 +21,17 @@ const Navbar = () => {
                     <Link to='/' className='branding'>F<div className='innertext'></div> O</Link>
                     <div className="navLinks">
                         <ul className='navLinksContainer'>
-                            <li className='linkFont navLinkFont'>Our Divisions</li>
+                            <div className="divisions">
+                                <li className='linkFont navLinkFont divisionsText' onClick={() => setDivisions(!divisions)} >Our Divisions</li>
+                                {divisions && <div className="divisionsMenu">
+                                    <div className="divisionsContent">
+                                        <Link to='/service1' onClick={() => setDivisions(false)} ><li>FO Builds</li></Link>
+                                        <Link to='/service2' onClick={() => setDivisions(false)} ><li>FO Soft</li></Link>
+                                    </div>
+                                </div>}
+                            </div>
                             <li className='linkFont navLinkFont'>Works</li>
-                            <li className='linkFont navLinkFont'>About Us</li>
+                           <Link to='/'> <a href='#aboutus'><li className='linkFont navLinkFont'>About Us</li></a></Link>
                             <Link to='/contactus'><li className='linkFont navLinkFont'>Contact Us</li></Link>
                         </ul>
 
@@ -39,13 +51,13 @@ const Navbar = () => {
                                 <li className='linkFont menuLinkFont'>Our Divisions</li>
                                 <li className='linkFont menuLinkFont'>Works</li>
                                 <li className='linkFont menuLinkFont'>About Us</li>
-                                <Link to='/contactus'><li className='linkFont menuLinkFont'>Contact Us</li></Link>
+                                <Link to='/contactus'><li className='linkFont menuLinkFont' onClick={() => setMenuOpen(false)}>Contact Us</li></Link>
                                 <div className="menuBtnContainer">
-                                    <button className='primaryBtn menuBtn'>
+                                    <Link to='/clientmsg' className='primaryBtn menuBtn' onClick={() => setMenuOpen(false)} >
                                         <ChatBubbleIcon fontSize='small' />
                                         Let&apos;s Talk
                                         <ArrowForwardIcon fontSize='small' />
-                                    </button>
+                                    </Link>
                                 </div>
                             </ul>
                         </div>

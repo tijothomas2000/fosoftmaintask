@@ -3,10 +3,19 @@
   width: 100%;
   height: 100px;
   background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  @include md{
+    height: 80px;
+  }
   .navContainer {
     margin: 0 auto;
     padding: 10px 60px;
     height: 100%;
+    @include sm{
+      padding: 10px 25px;
+    }
     .navbarContent {
       height: 100%;
       display: flex;
@@ -26,12 +35,49 @@
           height: 7px;
           background-color: white;
         }
+        @include md{
+          flex: none;
+        }
       }
       .navLinks {
         flex: auto;
         .navLinksContainer {
           display: flex;
           gap: 30px;
+          .divisions{
+            position: relative;
+            .divisionsText{
+              outline: none;
+              
+            }
+            .divisionsMenu{
+              transition-delay: 2s;
+              height: max-content;
+              width: 200px;
+              position: absolute;
+              background-color: white;
+              top: 40px;
+              border-radius: 10px;
+              padding: 10px;
+              .divisionsContent{
+                display: flex;
+                flex-direction: column;
+                li{
+                  border-radius: 10px;
+                  list-style: none;
+                  padding: 10px 15px;
+                  &:hover{
+                    background-color: blue;
+                    color: white;
+                    cursor: pointer;
+                  }
+                }
+              }
+              &:hover{
+                display: block;
+              }
+            }
+          }
         }
       }
       .navBtn {
@@ -53,10 +99,18 @@
         .dragHandle {
           color: white;
           position: absolute;
+          right: 20px;
+          @include sm{
+            right: 13px;
+          }
         }
         .closeIcon {
           color: white;
           position: absolute;
+          right: 20px;
+          @include sm{
+            right: 13px;
+          }
         }
       }
       .navmenu {
@@ -68,12 +122,19 @@
         right: 0;
         background-color: black;
         overflow-x: hidden;
+        @include md{
+          top: 80px;
+        }
         .menuLinksContainer {
-          height: 100%;
+          height: 100vh;
           display: flex;
           flex-direction: column;
+          
           .menuBtnContainer{
             padding: 20px 60px;
+            @include sm{
+              padding: 20px 25px;
+            }
             .menuBtn {
               width: 100%;
               display: flex;
@@ -83,6 +144,10 @@
               color: white;
               font-size: 20px;
               cursor: pointer;
+              &:hover{
+                background-color: white;
+                color: black;
+              }
             }
           }
         }
@@ -103,6 +168,9 @@
   padding: 30px 60px;
   color: white;
   list-style: none;
+  @include sm{
+    padding: 30px 25px;
+  }
   &:hover {
     background-color: blue;
     cursor: pointer;
@@ -119,5 +187,11 @@
   .menuIcons {
     display: flex !important;
     align-items: center;
+  }
+  .linkFont {
+    font-size: 30px !important;
+  }
+  .menuBtn{
+    font-size: 30px !important;
   }
 }

@@ -1,3 +1,4 @@
+@import '../../../styles/responsive.scss';
 .footer {
   width: 100%;
   height: max-content;
@@ -6,34 +7,53 @@
     margin: 0 auto;
     padding: 30px 60px;
     height: 100%;
+    @include md{
+      width: max-content;
+    }
+    @include sm{
+      width: 100%;
+      padding: 30px 25px;
+    }
     .footerContent {
       height: 100%;
       display: flex;
       align-items: center;
-    //   justify-content: center;
       gap: 30px;
-      .branding {
+      @include md{
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        width: max-content;
+      }
+      .brandingContainer{
+        height: 160px;
         flex: 1;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 36px;
-        text-align: center;
-        font-weight: 700;
-        color: white;
-        .innertext {
-          width: 7px;
-          height: 7px;
-          background-color: white;
+        .branding {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 36px;
+          text-align: center;
+          font-weight: 700;
+          color: white;
+          .innertext {
+            width: 7px;
+            height: 7px;
+            background-color: white;
+          }
         }
       }
       .footerSub {
+        height: 160px;
         flex: auto;
         display: flex;
         flex-direction: column;
         align-items: start;
-        justify-content: center;
+        justify-content: start;
         gap: 7px;
+        @include md{
+          height: max-content;
+        }
         .footerSubHeading {
           // font-family: 'Urbanist';
           font-size: 15px;
@@ -45,7 +65,11 @@
         }
         .footerText {
           font-size: 13px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
           color: grey;
+          justify-content: center;
         }
       }
     }

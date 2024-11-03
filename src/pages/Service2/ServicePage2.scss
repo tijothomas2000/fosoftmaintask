@@ -1,3 +1,118 @@
-.servicepage2{
-    
+@import '../../../styles/responsive.scss';
+
+.servicepage2 {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  .container{
+    @include sm{
+        padding: 0 40px;
+    }
+  }
+  .fosoftHeader {
+    width: 100%;
+    height: max-content;
+    --x: calc(var(--posX, 0) * 1px);
+    --y: calc(var(--posY, 0) * 1px);
+    background-image: linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)),
+      radial-gradient(
+        90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
+        rgb(200 200 200),
+        rgb(022 000 045)
+      ),
+      radial-gradient(
+        100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
+        rgb(250 255 000),
+        rgb(036 000 000)
+      ),
+      radial-gradient(
+        150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
+        rgb(020 175 125),
+        rgb(000 010 255)
+      ),
+      radial-gradient(
+        100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
+        rgb(255 077 000),
+        rgb(000 200 255)
+      ),
+      linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+    background-blend-mode: overlay, overlay, difference, difference, difference,
+      normal;
+    .fosoftHeadingContainer {
+      margin: 0 auto;
+      padding: 140px 60px 70px 60px;
+      width: 100%;
+      height: 100%;
+      @include sm{
+        padding: 120px 25px 40px 25px;
+      }
+      .serviceHeadingContent {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
+        gap: 2.25rem;
+        @include sm{
+          width: 100%;
+        }
+        h1{
+            padding-bottom: 5px;
+            border-bottom: 1px solid white;
+        }
+        p {
+          font-size: 1.2rem;
+          color: #ffff;
+          line-height: 25px;
+          letter-spacing: 1px ;
+        }
+        .serviceHeadingFont {
+          font-size: 72px;
+          font-weight: 300;
+          color: #ffff;
+          opacity: 1;
+          line-height: 1;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+  .fosoft {
+    padding: 70px 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    align-items: start;
+    // justify-content: center;
+    gap: 35px;
+    .serviceItem{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        video{
+            width: 100%;
+            height: max-content;
+        }
+        .serviceItemTitle{
+            font-size: 20px;
+            line-height: 1.75rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px){
+    .fosoft{
+        grid-template-columns: auto auto !important;
+    }
+}
+@media screen and (max-width: 640px){
+    .fosoft{
+        grid-template-columns: auto !important;
+    }
 }
